@@ -1,0 +1,143 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: hsl(35, 20%, 97%);
+    color: hsl(25, 25%, 15%);
+    line-height: 1.6;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, hsl(25, 85%, 60%), hsl(15, 80%, 55%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .main-title {
+        font-size: 4.5rem;
+    }
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: hsl(25, 10%, 55%);
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+/* Main content */
+.main-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1rem 4rem;
+}
+
+/* Menu sections */
+.menu-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(25, 35%, 25%);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dishes-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .dishes-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Dish cards */
+.dish-card {
+    cursor: pointer;
+}
+
+.dish-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.dish-card:hover .dish-image-container {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.dish-image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dish-card:hover .dish-image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, hsl(25, 35%, 25%, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dish-card:hover .overlay {
+    opacity: 1;
+}
+
+.dish-info {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dish-card:hover .dish-info {
+    opacity: 1;
+}
+
+.dish-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.dish-description {
+    font-size: 0.875rem;
+}
